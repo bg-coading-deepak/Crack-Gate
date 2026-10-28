@@ -1,0 +1,3 @@
+exam,subject,chapter,year,diff,question,optA,optB,optC,optD,correct,solution
+GATE CSE,Algorithms,Searching,2020,Easy,"Time complexity of binary search on n sorted items?",O(1),O(log n),O(n),O(n log n),B,"Each step halves the range.|So steps = log2 n."
+GATE CSE,DBMS,Normalisation,2021,Medium,"Which normal form removes partial dependency?",1NF,2NF,3NF,BCNF,B,"2NF removes partial dependency on a composite key."
