@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CrackGate: GATE test series with chapter-wise PYQs, full-length and subject-wise mock tests, detailed analysis and video courses for GATE CSE, DA, ECE, EE, ME and CE.">
+    <meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://crackgate.in/"><link rel="manifest" href="manifest.webmanifest">
+    <meta property="og:site_name" content="CrackGate"><meta property="og:url" content="https://crackgate.in/"><meta property="og:title" content="CrackGate - GATE Test Series, Mock Tests & PYQs"><meta property="og:description" content="Chapter-wise PYQs, mock tests, video courses and analysis for GATE."><meta property="og:type" content="website"><meta property="og:image" content="https://crackgate.in/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CrackGate - GATE Test Series, Mock Tests & PYQs"><meta name="twitter:image" content="https://crackgate.in/logo.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://crackgate.in/#org","name":"CrackGate","url":"https://crackgate.in/","logo":"https://crackgate.in/logo.png"},{"@type":"WebSite","@id":"https://crackgate.in/#website","url":"https://crackgate.in/","name":"CrackGate","inLanguage":"en-IN","publisher":{"@id":"https://crackgate.in/#org"}}]}</script>
+    <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>CrackGate - GATE Test Series, Mock Tests & PYQs</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; }
+    </style>
+</head>
+<body class="h-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col transition-colors duration-200">
+<noscript><h1>CrackGate - GATE Test Series</h1><p>Chapter-wise PYQs, mock tests and video courses for GATE.</p><ul><li><a href="/test-series/">All Test Series</a></li><li><a href="/test-series/gate-cse/">GATE CSE Test Series</a></li><li><a href="/test-series/gate-da/">GATE DA Test Series</a></li><li><a href="/test-series/gate-ece/">GATE ECE Test Series</a></li><li><a href="/test-series/gate-ee/">GATE EE Test Series</a></li><li><a href="/test-series/gate-me/">GATE ME Test Series</a></li><li><a href="/test-series/gate-ce/">GATE CE Test Series</a></li></ul></noscript>
+
+    <!-- TOP HEADER NAVBAR -->
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo & Title -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                <img src="logo.png" alt="Crack Gate logo" class="w-10 h-10 rounded-xl shadow-md object-cover">
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Crack<span class="text-sky-600 dark:text-sky-400">Gate</span></span>
+                    <span id="firebaseStatusBadge" class="hidden"></span>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-1" id="navLinks">
+                <button onclick="navigateTo('home')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-house mr-1.5"></i> Home</button>
+                <button onclick="navigateTo('courses')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-book-open mr-1.5"></i> Courses</button>
+                <button onclick="navigateTo('tests')" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-laptop-code mr-1.5"></i> CBT Tests</button>
+                <button id="studentDashboardBtn" onclick="navigateTo('student-dashboard')" class="hidden nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700"><i class="fa-solid fa-gauge mr-1.5"></i> Student Portal</button>
+                <button id="adminPortalBtn" onclick="navigateTo('admin-dashboard')" class="hidden nav-btn px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700 text-purple-600 dark:text-purple-400 font-semibold"><i class="fa-solid fa-user-shield mr-1.5"></i> Admin Control</button>
+            </nav>
+
+            <!-- Right Controls: Firebase Config, Theme, Auth -->
+            <div class="flex items-center space-x-3">
+                
+
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700">
+                    <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                    <i class="fa-solid fa-sun text-lg hidden dark:block"></i>
+                </button>
+
+                <div id="authNavButtons" class="flex items-center space-x-2">
+                    <button onclick="openAuthModal('student')" class="px-4 py-2 text-sm font-bold text-slate-900 bg-white rounded-lg hover:bg-slate-200 transition shadow-sm">Login / Sign up</button>
+                </div>
+
+                <div id="userInfoNav" class="hidden flex items-center space-x-3">
+                    <div class="text-right hidden sm:block">
+                        <div id="userNameDisplay" class="text-sm font-semibold leading-tight"></div>
+                        <div id="userRoleBadge" class="text-xs text-sky-600 dark:text-sky-400 font-medium"></div>
+                    </div>
+                    <button onclick="logoutUser()" class="p-2 rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-950/40 transition" title="Logout">
+                        <i class="fa-solid fa-right-from-bracket text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN VIEW CONTAINER -->
+    <main id="mainContainer" class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- SECTION: HOME / LANDING PAGE -->
+        <section id="view-home" class="space-y-12">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-800 to-sky-700 text-white p-8 sm:p-12 shadow-xl">
+                <div class="relative z-10 max-w-2xl space-y-6">
+                    <span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold uppercase tracking-wider text-sky-200">
+                        Chapter-wise PYQs · Mock Tests · Video Courses
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        Ace JEE, NEET, GATE & Govt Exams with Real Exam Goal Simulator
+                    </h1>
+                    <p class="text-sky-100 text-lg">
+                        Past year questions with full solutions, real GATE-style CBT mock tests, video courses and PDF notes for CSE, ECE, EE, ME and CE. Create your free account and start today.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold"><span class="px-3 py-1 rounded-full bg-white/15">GATE CSE</span><span class="px-3 py-1 rounded-full bg-white/15">GATE ECE</span><span class="px-3 py-1 rounded-full bg-white/15">GATE EE</span><span class="px-3 py-1 rounded-full bg-white/15">GATE ME</span><span class="px-3 py-1 rounded-full bg-white/15">GATE CE</span></div>
+<div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="navigateTo('tests')" class="px-6 py-3 bg-white text-sky-900 hover:bg-sky-50 font-bold rounded-xl shadow-lg transition flex items-center space-x-2">
+                            <i class="fa-solid fa-laptop-code"></i><span>Start CBT Mock Test</span>
+                        </button>
+                        <button onclick="navigateTo('courses')" class="px-6 py-3 bg-sky-600/50 hover:bg-sky-600 border border-white/20 text-white font-semibold rounded-xl backdrop-blur-md transition flex items-center space-x-2">
+                            <i class="fa-solid fa-book"></i><span>Explore Courses</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/50 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Full Login History</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Every login is recorded with timestamp and device info for account security.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">NTA CBT Simulator</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Question palette, review status, exact +4/-1 marking schema, and instant scoreboard.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Always in Sync</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Your progress, bookmarks and results stay in sync across sessions.</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Admin Analytics</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Manage courses, student permissions, view test attempts, and revenue reports.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: COURSES CATALOG -->
+        <section id="view-courses" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold">Featured Prep Courses</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Targeted study packs with video modules, downloadable PDF formulas & test series access.</p>
+                </div>
+                <!-- Filters -->
+                <div class="flex items-center space-x-2">
+                    <select id="courseFilter" onchange="renderCourses()" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500"><option value="ALL">All Exams</option><option value="GATE CSE">GATE CSE</option><option value="GATE ECE">GATE ECE</option><option value="GATE EE">GATE EE</option><option value="GATE ME">GATE ME</option><option value="GATE CE">GATE CE</option></select>
+                </div>
+            </div>
+
+            <div id="coursesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Course Cards injected here -->
+            </div>
+        </section>
+
+        <!-- SECTION: CBT TESTS LIST -->
+        <section id="view-tests" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold">NTA Pattern CBT Mock Tests</h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Simulate authentic computer-based test environment with live timer and instant analytical breakdown.</p>
+                </div>
+            </div>
+
+            <div id="testsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- CBT Test Cards injected here -->
+            </div>
+        </section>
+
+        <!-- SECTION: STUDENT DASHBOARD -->
+        <section id="view-student-dashboard" class="hidden space-y-6">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 rounded-2xl bg-sky-100 dark:bg-sky-900/60 text-sky-600 dark:text-sky-300 flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h2 id="studentDashName" class="text-2xl font-bold">Student Portal</h2>
+                        <p id="studentDashEmail" class="text-slate-500 dark:text-slate-400 text-sm">student@crackgate.in</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-center px-4 py-2 bg-slate-50 dark:bg-slate-700/50 rounded-xl">
+                        <span class="block text-xl font-bold text-sky-600 dark:text-sky-400" id="dashEnrolledCount">0</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Courses</span>
+                    </div>
+                    <div class="text-center px-4 py-2 bg-slate-50 dark:bg-slate-700/50 rounded-xl">
+                        <span class="block text-xl font-bold text-indigo-600 dark:text-indigo-400" id="dashAttemptCount">0</span>
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Tests Given</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Tabs -->
+            <div class="border-b border-slate-200 dark:border-slate-700 flex space-x-6 text-sm font-semibold">
+                <button onclick="switchStudentTab('learning')" id="tabBtn-learning" class="pb-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400">My Learning & Notes</button>
+                <button onclick="switchStudentTab('test-history')" id="tabBtn-test-history" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">Test Attempt History</button>
+                <button onclick="switchStudentTab('login-history')" id="tabBtn-login-history" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">My Login History</button>
+                <button onclick="switchStudentTab('support')" id="tabBtn-support" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">Support Desk</button>
+            </div>
+
+            <!-- Student Tab Content: Learning -->
+            <div id="studentTab-learning" class="space-y-6">
+                <div id="enrolledCoursesList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Enrolled courses rendered here -->
+                </div>
+            </div>
+
+            <!-- Student Tab Content: Test History -->
+            <div id="studentTab-test-history" class="hidden space-y-4">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                                <tr>
+                                    <th class="p-4">Test Title</th>
+                                    <th class="p-4">Date</th>
+                                    <th class="p-4">Score</th>
+                                    <th class="p-4">Accuracy</th>
+                                    <th class="p-4">Time Taken</th>
+                                    <th class="p-4">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTestHistoryTable" class="divide-y divide-slate-200 dark:divide-slate-700">
+                                <!-- Test attempt logs -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Tab Content: Login History -->
+            <div id="studentTab-login-history" class="hidden space-y-4">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
+                    <h3 class="text-lg font-bold mb-2">My Session Audit Trail</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">All login events with timestamps and browser signatures.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                                <tr>
+                                    <th class="p-3">Timestamp</th>
+                                    <th class="p-3">Role</th>
+                                    <th class="p-3">User Agent / Device</th>
+                                    <th class="p-3">Login Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentLoginHistoryTable" class="divide-y divide-slate-200 dark:divide-slate-700">
+                                <!-- Personal login logs -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Tab Content: Support -->
+            <div id="studentTab-support" class="hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6">
+                        <h3 class="font-bold text-lg mb-4">Raise Support Ticket</h3>
+                        <form onsubmit="handleCreateTicket(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Subject</label>
+                                <input type="text" id="ticketSubject" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500" placeholder="e.g. CBT timer issue">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Message</label>
+                                <textarea id="ticketMessage" rows="4" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500" placeholder="Describe your query..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-2.5 bg-sky-600 hover:bg-sky-700 text-white font-semibold rounded-xl transition text-sm">Submit Ticket</button>
+                        </form>
+                    </div>
+                    <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6">
+                        <h3 class="font-bold text-lg mb-4">Your Queries & Support History</h3>
+                        <div id="studentTicketsList" class="space-y-4">
+                            <!-- Support Tickets -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ADMIN PANEL -->
+        <section id="view-admin-dashboard" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold flex items-center space-x-2">
+                        <span class="text-purple-600 dark:text-purple-400"><i class="fa-solid fa-user-shield"></i></span>
+                        <span>Admin Dashboard</span>
+                    </h2>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Manage courses, tests, questions, payments and students.</p>
+                </div>
+            </div>
+
+            <!-- Admin Navigation Tabs -->
+            <div class="border-b border-slate-200 dark:border-slate-700 flex flex-wrap gap-4 text-sm font-semibold">
+                <button onclick="switchAdminTab('analytics')" id="adminTabBtn-analytics" class="pb-3 border-b-2 border-purple-600 text-purple-600 dark:text-purple-400">Analytics & Sales</button>
+                <button onclick="switchAdminTab('login-history')" id="adminTabBtn-login-history" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">Login Logs Database</button>
+                <button onclick="switchAdminTab('manage-courses')" id="adminTabBtn-manage-courses" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">Course Uploader</button>
+                <button onclick="switchAdminTab('manage-tests')" id="adminTabBtn-manage-tests" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">CBT Builder & Questions</button>
+                <button onclick="switchAdminTab('students')" id="adminTabBtn-students" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300">Student Enrolments</button>
+            </div>
+
+            <!-- Admin Tab: Analytics -->
+            <div id="adminTab-analytics" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <span class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Total Revenue</span>
+                        <div id="adminStatRevenue" class="text-3xl font-extrabold text-emerald-600 mt-2">₹0</div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <span class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Registered Users</span>
+                        <div id="adminStatUsers" class="text-3xl font-extrabold text-sky-600 mt-2">0</div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <span class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase">Total CBT Attempts</span>
+                        <div id="adminStatAttempts" class="text-3xl font-extrabold text-purple-600 mt-2">0</div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-base mb-4">Platform Growth & Revenue Trends</h3>
+                    <div class="h-64">
+                        <canvas id="adminAnalyticsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Tab: LOGIN HISTORY Audit Log -->
+            <div id="adminTab-login-history" class="hidden space-y-4">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="font-bold text-lg">System-Wide Login History Log</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Recorded login activity for both Students and Admins.</p>
+                        </div>
+                        <input type="text" id="adminLoginFilter" onkeyup="filterAdminLoginHistory()" placeholder="Filter by email or role..." class="bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-1.5 text-sm focus:ring-2 focus:ring-purple-500">
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                                <tr>
+                                    <th class="p-3">User Email</th>
+                                    <th class="p-3">Role</th>
+                                    <th class="p-3">Login Time</th>
+                                    <th class="p-3">User ID</th>
+                                    <th class="p-3">User Agent</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminLoginLogsTable" class="divide-y divide-slate-200 dark:divide-slate-700">
+                                <!-- Log records -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Tab: Course Uploader -->
+            <div id="adminTab-manage-courses" class="hidden space-y-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-lg mb-4">Upload New Course Pack</h3>
+                    <form onsubmit="handleCreateCourse(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Course Title</label>
+                            <input type="text" id="courseTitle" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" placeholder="e.g. JEE Main Complete Physics Crash Course">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Target Exam Category</label>
+                            <select id="courseCategory" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm"><option value="GATE CSE">GATE CSE</option><option value="GATE ECE">GATE ECE</option><option value="GATE EE">GATE EE</option><option value="GATE ME">GATE ME</option><option value="GATE CE">GATE CE</option></select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Price (₹)</label>
+                            <input type="number" id="coursePrice" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" placeholder="499">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Thumbnail Image URL</label>
+                            <input type="url" id="courseImage" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" value="https://placehold.co/600x400/0284c7/ffffff?text=JEE+Physics">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Sample YouTube Embed URL</label>
+                            <input type="text" id="courseVideoUrl" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" value="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">PDF Notes Download Link</label>
+                            <input type="text" id="coursePdfUrl" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" value="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Description</label>
+                            <textarea id="courseDesc" rows="3" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" placeholder="Comprehensive course description..."></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition text-sm">
+                                Save Course
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Admin Tab: CBT Builder & Question Bank -->
+            <div id="adminTab-manage-tests" class="hidden space-y-6">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-lg mb-4">Create CBT Mock Test Series</h3>
+                    <form onsubmit="handleCreateTest(event)" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Test Name</label>
+                            <input type="text" id="testName" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" placeholder="JEE Main All India Mock #1">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Category</label>
+                            <select id="testCategory" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm"><option value="GATE CSE">GATE CSE</option><option value="GATE ECE">GATE ECE</option><option value="GATE EE">GATE EE</option><option value="GATE ME">GATE ME</option><option value="GATE CE">GATE CE</option></select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Duration (Minutes)</label>
+                            <input type="number" id="testDuration" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm" value="180">
+                        </div>
+                        <div class="md:col-span-3">
+                            <button type="submit" class="px-6 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition text-sm">
+                                Add Test Suite
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Admin Tab: Student Enrolments -->
+            <div id="adminTab-students" class="hidden space-y-4">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                    <h3 class="font-bold text-lg mb-4">User Database & Access Control</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 dark:bg-slate-700/50 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                                <tr>
+                                    <th class="p-3">Email</th>
+                                    <th class="p-3">Role</th>
+                                    <th class="p-3">Enrolled Courses</th>
+                                    <th class="p-3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminUserTable" class="divide-y divide-slate-200 dark:divide-slate-700">
+                                <!-- User records -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CBT EXAM SIMULATOR (FULL SCREEN SIMULATOR MODE) -->
+        <section id="view-cbt-engine" class="hidden space-y-4">
+            <div class="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-between shadow-lg">
+                <div class="flex items-center space-x-3">
+                    <span class="px-2.5 py-1 bg-sky-600 text-white font-bold rounded-lg text-xs" id="cbtExamBadge">JEE MAIN</span>
+                    <h2 class="text-lg font-bold truncate" id="cbtTestTitle">Full Mock Test Simulator</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block">Time Remaining</span>
+                        <span class="text-xl font-mono font-bold text-amber-400" id="cbtTimerDisplay">03:00:00</span>
+                    </div>
+                    <button onclick="submitCBTExam()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 font-bold rounded-xl text-sm transition">
+                        Submit Test
+                    </button>
+                </div>
+            </div>
+
+            <!-- CBT Subject Switcher Tabs -->
+            <div class="flex space-x-2 bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-semibold overflow-x-auto" id="cbtSubjectTabs">
+                <!-- Subject buttons dynamically populated -->
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Question Viewport -->
+                <div class="lg:col-span-3 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 flex flex-col justify-between min-h-[450px]">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3 mb-4">
+                            <span class="font-bold text-sky-600 dark:text-sky-400" id="cbtQuestionNum">Question 1</span>
+                            <span class="text-xs text-slate-500">Marks: <strong class="text-emerald-600">+4</strong> | <strong class="text-red-500">-1</strong></span>
+                        </div>
+                        <div id="cbtQuestionText" class="text-base sm:text-lg mb-6 font-medium leading-relaxed">
+                            <!-- Question text -->
+                        </div>
+                        <div id="cbtOptionsList" class="space-y-3">
+                            <!-- Options list -->
+                        </div>
+                    </div>
+
+                    <!-- CBT Navigation Action Buttons -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 dark:border-slate-700 pt-4 mt-6">
+                        <div class="flex items-center space-x-2">
+                            <button onclick="cbtAction('mark')" class="px-4 py-2 bg-purple-100 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 font-medium rounded-xl text-xs sm:text-sm hover:bg-purple-200">
+                                Mark for Review & Next
+                            </button>
+                            <button onclick="cbtAction('clear')" class="px-4 py-2 bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300 font-medium rounded-xl text-xs sm:text-sm hover:bg-slate-200">
+                                Clear Response
+                            </button>
+                        </div>
+                        <button onclick="cbtAction('save-next')" class="px-6 py-2 bg-sky-600 text-white font-bold rounded-xl text-sm hover:bg-sky-700">
+                            Save & Next
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CBT Question Palette -->
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 space-y-4">
+                    <h4 class="font-bold text-sm border-b border-slate-200 dark:border-slate-700 pb-2">Question Palette</h4>
+                    
+                    <!-- Palette Legends -->
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span><span>Answered</span></div>
+                        <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span><span>Not Answered</span></div>
+                        <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-purple-500 inline-block"></span><span>Marked</span></div>
+                        <div class="flex items-center space-x-2"><span class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 inline-block"></span><span>Not Visited</span></div>
+                    </div>
+
+                    <!-- Palette Grid -->
+                    <div id="cbtPaletteGrid" class="grid grid-cols-5 gap-2 pt-2 border-t border-slate-200 dark:border-slate-700 max-h-64 overflow-y-auto custom-scrollbar">
+                        <!-- Numbers grid -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TEST RESULT / SCORECARD -->
+        <section id="view-test-result" class="hidden space-y-6">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 text-center space-y-4">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h2 class="text-3xl font-extrabold">Test Submission Scorecard</h2>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Your test result has been saved to your profile and history.</p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto pt-4">
+                    <div class="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl">
+                        <span class="text-xs text-slate-500 block uppercase">Score</span>
+                        <span class="text-2xl font-bold text-sky-600" id="resScore">0/0</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl">
+                        <span class="text-xs text-slate-500 block uppercase">Accuracy</span>
+                        <span class="text-2xl font-bold text-emerald-600" id="resAccuracy">0%</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl">
+                        <span class="text-xs text-slate-500 block uppercase">Correct / Wrong</span>
+                        <span class="text-2xl font-bold text-slate-800 dark:text-slate-100" id="resCounts">0 / 0</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-2xl">
+                        <span class="text-xs text-slate-500 block uppercase">Time Taken</span>
+                        <span class="text-2xl font-bold text-purple-600" id="resTime">0m</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Question Breakdown & Solutions -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 space-y-4">
+                <h3 class="font-bold text-lg">Step-by-Step Question Solutions</h3>
+                <div id="solutionBreakdown" class="space-y-4">
+                    <!-- Detailed solutions rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: COURSE VIEWER / VIDEO PLAYER & NOTES -->
+        <section id="view-course-player" class="hidden space-y-6">
+            <div class="flex items-center justify-between">
+                <button onclick="navigateTo('student-dashboard')" class="text-sm text-sky-600 dark:text-sky-400 font-semibold flex items-center space-x-1">
+                    <i class="fa-solid fa-arrow-left"></i><span>Back to My Portal</span>
+                </button>
+                <h2 id="playerCourseTitle" class="text-xl font-bold">Course Player</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Video Container -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="aspect-video bg-black rounded-2xl overflow-hidden shadow-lg relative">
+                        <iframe id="videoIframe" class="w-full h-full" src="" title="Course Video" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <h3 id="playerModuleTitle" class="text-lg font-bold mb-2">Module Video Lesson</h3>
+                        <p id="playerModuleDesc" class="text-slate-500 dark:text-slate-400 text-sm">Study the core conceptual formulas and problem-solving shortcuts.</p>
+                    </div>
+                </div>
+
+                <!-- Notes Sidepanel -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-base mb-3 flex items-center space-x-2">
+                            <i class="fa-solid fa-file-pdf text-red-500"></i>
+                            <span>Downloadable Study Notes</span>
+                        </h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">High-yield summary notes, formula cheat sheets, and previous year solutions PDF.</p>
+                    </div>
+                    <a id="playerPdfLink" href="#" target="_blank" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-center rounded-xl transition text-sm flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Open PDF Notes Sheet</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 mt-auto py-10">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+<div class="col-span-2"><div class="flex items-center gap-2 text-xl font-bold text-white"><img src="logo.png" alt="" class="w-9 h-9 rounded-lg">Crack<span class="text-sky-400">Gate</span></div><p class="mt-2 text-xs max-w-xs">Your GATE. Our Responsibility. Past year questions, mock tests and analysis for GATE CSE, ECE, EE, ME and CE.</p></div>
+<div class="space-y-2"><div class="font-semibold text-white">Product</div><a href="#" onclick="navigateTo('courses');return false" class="block hover:text-white">Courses</a><a href="#" onclick="navigateTo('tests');return false" class="block hover:text-white">CBT Tests</a></div>
+<div class="space-y-2"><div class="font-semibold text-white">Support</div><a href="#" onclick="openLegal('Contact us');return false" class="block hover:text-white">Contact us</a><a href="#" onclick="openLegal('Privacy policy');return false" class="block hover:text-white">Privacy policy</a><a href="#" onclick="openLegal('Terms and conditions');return false" class="block hover:text-white">Terms and conditions</a><a href="#" onclick="openLegal('Refund policy');return false" class="block hover:text-white">Refund policy</a></div>
+</div><nav aria-label="Test series" class="max-w-7xl mx-auto px-4 mt-8 text-xs flex flex-wrap gap-x-5 gap-y-2"><a href="/test-series/" class="hover:text-white">All Test Series</a><a href="/test-series/gate-cse/" class="hover:text-white">GATE CSE Test Series</a><a href="/test-series/gate-da/" class="hover:text-white">GATE DA Test Series</a><a href="/test-series/gate-ece/" class="hover:text-white">GATE ECE Test Series</a><a href="/test-series/gate-ee/" class="hover:text-white">GATE EE Test Series</a><a href="/test-series/gate-me/" class="hover:text-white">GATE ME Test Series</a><a href="/test-series/gate-ce/" class="hover:text-white">GATE CE Test Series</a></nav><p class="text-center text-xs mt-8">&copy; 2026 CrackGate. All rights reserved. | Made with <span class="text-red-500">&hearts;</span> in India</p></footer>
+
+    <!-- MODAL: AUTH MODAL (STUDENT / ADMIN) -->
+    <div id="authModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative space-y-4">
+            <button onclick="closeModal('authModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center">
+                <div id="authModalIcon" class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-bold mx-auto mb-2">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <h3 id="authModalTitle" class="text-xl font-bold">Student Portal Login</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Secure sign in to your Crack Gate account</p>
+            </div>
+
+            <form onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                <input type="hidden" id="authRole" value="student">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Email Address</label>
+                    <input type="email" id="authEmail" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500" placeholder="user@crackgate.in">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Password</label>
+                    <input type="password" id="authPassword" required class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500" placeholder="••••••••">
+                </div>
+                <button type="submit" id="authSubmitBtn" class="w-full py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl transition text-sm shadow-md">
+                    Sign In & Save Session Log
+                </button>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- MODAL: MOCK RAZORPAY / STRIPE PAYMENT -->
+    <div id="paymentModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full p-6 border border-slate-200 dark:border-slate-700 shadow-2xl relative space-y-4">
+            <button onclick="closeModal('paymentModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="border-b border-slate-200 dark:border-slate-700 pb-3">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Crack Gate Checkout</span>
+                <h3 id="payCourseTitle" class="text-lg font-bold">Course Title</h3>
+                <div class="text-2xl font-extrabold text-slate-900 dark:text-white mt-1" id="payAmountDisplay">₹499</div>
+            </div>
+
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Apply Discount Coupon</label>
+                    <div class="flex space-x-2">
+                        <input type="text" id="couponInput" class="flex-1 bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm uppercase" placeholder="CRACK10">
+                        <button onclick="applyCoupon()" class="px-4 py-2 bg-slate-200 dark:bg-slate-600 font-semibold rounded-xl text-xs">Apply</button>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl space-y-2 text-xs">
+                    <div class="flex justify-between"><span>Base Price:</span><span id="payBasePrice">₹499</span></div>
+                    <div class="flex justify-between text-emerald-600"><span>Discount:</span><span id="payDiscount">-₹0</span></div>
+                    <div class="flex justify-between font-bold text-sm border-t border-slate-200 dark:border-slate-600 pt-1"><span>Total Payable:</span><span id="payFinalTotal">₹499</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+  <button id="payTab-upi" onclick="switchPayTab('upi')" class="py-2 rounded-xl bg-sky-600 text-white">UPI / GPay QR</button>
+  <button id="payTab-mock" onclick="switchPayTab('mock')" class="py-2 rounded-xl bg-slate-200 dark:bg-slate-700">Mock Purchase</button>
+</div>
+<div id="payPane-upi" class="space-y-3 text-center">
+  <div id="upiQr" class="mx-auto bg-white p-2 rounded-xl inline-block"></div>
+  <p class="text-xs text-slate-500">Scan with GPay / PhonePe / Paytm, pay <b id="upiAmt"></b>, then enter the 12-digit UTR / Transaction ID.</p>
+  <a id="upiLink" href="#" class="block text-xs text-sky-600 font-semibold md:hidden">Open in UPI app</a>
+  <input id="utrInput" maxlength="12" placeholder="12-digit UTR number" class="w-full bg-slate-50 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-2 text-sm">
+  <button onclick="submitUpi()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm">I have paid - Submit for verification</button>
+</div>
+<div id="payPane-mock" class="hidden space-y-3">
+  <p class="text-xs text-slate-500">Test mode: no real money is charged. Course unlocks instantly.</p>
+  <button onclick="mockBuy()" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl text-sm">Mock Purchase &amp; Unlock</button>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT APPLICATION CORE -->
+    <script>
+        // ==========================================
+        // LOCAL MOCK STATE & INITIAL DATA
+        // ==========================================
+        let firebaseApp = null;
+        let db = null;
+        let auth = null;
+        let isFirebaseActive = false;
+
+        let currentUser = null; // { uid, email, role: 'student'|'admin', enrolledCourses: [] }
+        let currentPayingCourse = null;
+        let activeCbtExam = null;
+        let cbtTimerInterval = null;
+        let cbtAnswers = {}; // { qIndex: { selected: number, status: 'answered'|'marked'|'visited' } }
+        let cbtCurrentQIndex = 0;
+        let cbtStartTime = 0;
+
+        let mockStore = {
+            users: [
+                { uid: 'std_1', email: 'student@crackgate.in', role: 'student', enrolledCourses: ['c1'] },
+                { uid: 'adm_1', email: 'admin@crackgate.in', role: 'admin', enrolledCourses: [] }
+            ],
+            courses: [
+                {
+                    id: 'c1',
+                    title: 'JEE Main 2026 Physics Crash Course',
+                    category: 'JEE',
+                    price: 499,
+                    image: 'https://placehold.co/600x400/0284c7/ffffff?text=JEE+Physics',
+                    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+                    desc: 'Complete high-yield Physics formula review with 1,000+ solved previous year questions.'
+                },
+                {
+                    id: 'c2',
+                    title: 'NEET Chemistry Masterclass',
+                    category: 'NEET',
+                    price: 699,
+                    image: 'https://placehold.co/600x400/059669/ffffff?text=NEET+Chem',
+                    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                    pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+                    desc: 'Organic & Inorganic Chemistry reactions, mechanisms, and shortcut tricks for NEET aspirants.'
+                }
+            ],
+            tests: [
+                {
+                    id: 't1',
+                    title: 'JEE Main Full Mock Test #1',
+                    category: 'JEE',
+                    durationMinutes: 180,
+                    questions: [
+                        {
+                            subject: 'Physics',
+                            text: 'A particle moves along a straight line with velocity v(t) = 3t^2 - 6t. What is the acceleration at t = 2s?',
+                            options: ['6 m/s²', '12 m/s²', '0 m/s²', '3 m/s²'],
+                            correct: 0,
+                            solution: 'Acceleration a = dv/dt = d/dt (3t² - 6t) = 6t - 6. At t = 2s, a = 6(2) - 6 = 6 m/s².'
+                        },
+                        {
+                            subject: 'Chemistry',
+                            text: 'Which of the following compounds exhibits highest dipole moment?',
+                            options: ['cis-1,2-dichloroethene', 'trans-1,2-dichloroethene', '1,4-dichlorobenzene', 'CCl4'],
+                            correct: 0,
+                            solution: 'cis-1,2-dichloroethene has non-zero resultant dipole moment due to symmetric addition of dipoles.'
+                        },
+                        {
+                            subject: 'Mathematics',
+                            text: 'Evaluate limit as x approaches 0 for (sin x) / x:',
+                            options: ['1', '0', 'Undefined', 'Infinity'],
+                            correct: 0,
+                            solution: 'Standard calculus limit definition: lim(x->0) sin(x)/x = 1.'
+                        }
+                    ]
+                }
+            ],
+            login_history: [],
+            test_attempts: [],
+            support_tickets: []
+        };
+
+        // ==========================================
+        // INITIALIZATION & FIREBASE SETUP
+        // ==========================================
+        window.onload = function() {
+            initFirebaseFromStorage();
+            renderCourses();
+            renderTests();
+            renderAdminDashboard();
+            updateAuthUI();
+        };
+
+        function initFirebaseFromStorage() {
+            const savedConfig = localStorage.getItem('crackgate_firebase_config');
+            if (savedConfig) {
+                try {
+                    const configObj = JSON.parse(savedConfig);
+                    if (!firebase.apps.length) {
+                        firebaseApp = firebase.initializeApp(configObj);
+                    } else {
+                        firebaseApp = firebase.app();
+                    }
+                    db = firebase.firestore();
+                    auth = firebase.auth();
+                    isFirebaseActive = true;
+                    
+                    document.getElementById('firebaseStatusBadge').className = "ml-2 text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium";
+                    document.getElementById('firebaseStatusBadge').innerText = "Firebase Live";
+
+                    // Auth State Observer
+                    auth.onAuthStateChanged(user => {
+                        if (user) {
+                            fetchUserProfile(user);
+                        } else {
+                            currentUser = null;
+                            updateAuthUI();
+                        }
+                    });
+                } catch(e) {
+                    console.error("Firebase Config Error:", e);
+                    showToast("Something went wrong. Please refresh the page.", "error");
+                }
+            }
+        }
+
+        function saveFirebaseConfig() {
+            const val = document.getElementById('firebaseConfigInput').value.trim();
+            if (!val) return;
+            try {
+                JSON.parse(val);
+                localStorage.setItem('crackgate_firebase_config', val);
+                showToast("Config saved! Reloading...", "success");
+                setTimeout(() => location.reload(), 1000);
+            } catch(e) {
+                showToast("Invalid JSON syntax", "error");
+            }
+        }
+
+        function resetFirebaseConfig() {
+            localStorage.removeItem('crackgate_firebase_config');
+            location.reload();
+        }
+
+        // ==========================================
+        // FULL LOGIN HISTORY LOGGING FUNCTIONALITY
+        // ==========================================
+        async function logUserLogin(userObj) {
+            const logEntry = {
+                uid: userObj.uid,
+                email: userObj.email,
+                role: userObj.role,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent.substring(0, 80),
+                ip: 'Recorded Session'
+            };
+
+            // Always store in local store backup
+            mockStore.login_history.unshift(logEntry);
+
+            // Save to Firestore if connected
+            if (isFirebaseActive && db) {
+                try {
+                    await db.collection('login_history').add(logEntry);
+                } catch(err) {
+                    console.error("Firestore Login History Save Failed:", err);
+                }
+            }
+            renderLoginHistoryTables();
+        }
+
+        function renderLoginHistoryTables() {
+            // Render Student Personal Login History
+            const studentTable = document.getElementById('studentLoginHistoryTable');
+            if (studentTable && currentUser) {
+                const logs = mockStore.login_history.filter(l => l.email === currentUser.email);
+                studentTable.innerHTML = logs.length ? logs.map(l => `
+                    <tr>
+                        <td class="p-3 font-mono text-xs">${new Date(l.timestamp).toLocaleString()}</td>
+                        <td class="p-3"><span class="px-2 py-0.5 text-xs rounded font-semibold ${l.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-sky-100 text-sky-700'}">${l.role}</span></td>
+                        <td class="p-3 text-xs text-slate-500 max-w-xs truncate">${l.userAgent}</td>
+                        <td class="p-3 text-emerald-600 font-semibold text-xs"><i class="fa-solid fa-circle-check"></i> Success</td>
+                    </tr>
+                `).join('') : `<tr><td colspan="4" class="p-4 text-center text-slate-400">No login records found</td></tr>`;
+            }
+
+            // Render Admin System-Wide Login History
+            const adminTable = document.getElementById('adminLoginLogsTable');
+            if (adminTable) {
+                adminTable.innerHTML = mockStore.login_history.map(l => `
+                    <tr>
+                        <td class="p-3 font-semibold">${l.email}</td>
+                        <td class="p-3"><span class="px-2 py-0.5 text-xs rounded font-semibold ${l.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-sky-100 text-sky-700'}">${l.role}</span></td>
+                        <td class="p-3 font-mono text-xs">${new Date(l.timestamp).toLocaleString()}</td>
+                        <td class="p-3 font-mono text-xs text-slate-400">${l.uid}</td>
+                        <td class="p-3 text-xs text-slate-500 max-w-xs truncate">${l.userAgent}</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
+        function filterAdminLoginHistory() {
+            const q = document.getElementById('adminLoginFilter').value.toLowerCase();
+            const rows = document.querySelectorAll('#adminLoginLogsTable tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                r.style.display = text.includes(q) ? '' : 'none';
+            });
+        }
+
+        // ==========================================
+        // AUTHENTICATION & SESSION MANAGEMENT
+        // ==========================================
+        function openAuthModal(role) {
+            document.getElementById('authRole').value = role;
+            document.getElementById('authModalTitle').innerText = role === 'admin' ? 'Admin Portal Sign In' : 'Student Portal Sign In';
+            document.getElementById('authModalIcon').className = role === 'admin' ? 'w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mx-auto mb-2' : 'w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl font-bold mx-auto mb-2';
+            document.getElementById('authEmail').value = role === 'admin' ? 'admin@crackgate.in' : 'student@crackgate.in';
+            document.getElementById('authPassword').value = 'password123';
+            openModal('authModal');
+        }
+
+        async function handleAuthSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('authEmail').value;
+            const password = document.getElementById('authPassword').value;
+            const role = document.getElementById('authRole').value;
+
+            if (isFirebaseActive && auth) {
+                try {
+                    let userCred;
+                    try {
+                        userCred = await auth.signInWithEmailAndPassword(email, password);
+                    } catch(err) {
+                        userCred = await auth.createUserWithEmailAndPassword(email, password);
+                    }
+                    const user = userCred.user;
+                    const ref = db.collection('users').doc(user.uid);
+                    const snap = await ref.get();
+                    currentUser = snap.exists ? snap.data() : { uid: user.uid, email: user.email, role: 'student', enrolledCourses: [] };
+                    currentUser.role = ADMIN_EMAILS.includes((user.email || '').toLowerCase()) ? 'admin' : 'student';
+                    await ref.set(currentUser, { merge: true });
+                } catch(e) {
+                    showToast(e.message, "error");
+                    return;
+                }
+            } else {
+                // Local Fallback Auth
+                let user = mockStore.users.find(u => u.email === email);
+                if (!user) {
+                    user = { uid: 'u_' + Date.now(), email, role: ADMIN_EMAILS.includes(email.toLowerCase()) ? 'admin' : 'student', enrolledCourses: [] };
+                    mockStore.users.push(user);
+                }
+                currentUser = user;
+            }
+
+            // Log Login Event to Firestore and Store
+            await logUserLogin(currentUser);
+
+            closeModal('authModal');
+            updateAuthUI();
+            showToast(`Welcome ${currentUser.email}! Session logged.`, "success");
+
+            if (currentUser.role === 'admin') {
+                navigateTo('admin-dashboard');
+            } else {
+                navigateTo('student-dashboard');
+            }
+        }
+
+        async function fetchUserProfile(firebaseUser) {
+            if (db) {
+                const doc = await db.collection('users').doc(firebaseUser.uid).get();
+                if (doc.exists) {
+                    currentUser = doc.data();
+                } else {
+                    currentUser = { uid: firebaseUser.uid, email: firebaseUser.email, role: 'student', enrolledCourses: [] };
+                }
+            }
+            updateAuthUI();
+        }
+
+        function logoutUser() {
+            if (isFirebaseActive && auth) {
+                auth.signOut();
+            }
+            currentUser = null;
+            updateAuthUI();
+            navigateTo('home');
+            showToast("Logged out successfully.", "info");
+        }
+
+        function updateAuthUI() {
+            const authNav = document.getElementById('authNavButtons');
+            const userInfo = document.getElementById('userInfoNav');
+            const studentBtn = document.getElementById('studentDashboardBtn');
+            const adminBtn = document.getElementById('adminPortalBtn');
+
+            if (currentUser) {
+                authNav.classList.add('hidden');
+                userInfo.classList.remove('hidden');
+                document.getElementById('userNameDisplay').innerText = currentUser.email.split('@')[0];
+                document.getElementById('userRoleBadge').innerText = currentUser.role.toUpperCase();
+
+                if (currentUser.role === 'admin') {
+                    adminBtn.classList.remove('hidden');
+                    studentBtn.classList.add('hidden');
+                } else {
+                    studentBtn.classList.remove('hidden');
+                    adminBtn.classList.add('hidden');
+                }
+            } else {
+                authNav.classList.remove('hidden');
+                userInfo.classList.add('hidden');
+                studentBtn.classList.add('hidden');
+                adminBtn.classList.add('hidden');
+            }
+            renderStudentDashboard();
+            renderLoginHistoryTables();
+        }
+
+        // ==========================================
+        // NAVIGATION ENGINE
+        // ==========================================
+        function navigateTo(viewId) {
+            const views = ['home', 'courses', 'tests', 'student-dashboard', 'admin-dashboard', 'cbt-engine', 'test-result', 'course-player'];
+            views.forEach(v => {
+                const el = document.getElementById('view-' + v);
+                if (el) el.classList.add('hidden');
+            });
+            const target = document.getElementById('view-' + viewId);
+            if (target) target.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==========================================
+        // COURSES & PAYMENT LOGIC
+        // ==========================================
+        function renderCourses() {
+            const grid = document.getElementById('coursesGrid');
+            const filter = document.getElementById('courseFilter').value;
+            const courses = filter === 'ALL' ? mockStore.courses : mockStore.courses.filter(c => c.category === filter);
+
+            grid.innerHTML = courses.map(c => `
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm flex flex-col justify-between">
+                    <div>
+                        <img src="${c.image}" alt="${c.title}" class="w-full h-44 object-cover">
+                        <div class="p-5 space-y-2">
+                            <span class="px-2.5 py-0.5 bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300 font-bold text-xs rounded-full uppercase">${c.category}</span>
+                            <h3 class="font-bold text-lg leading-snug">${c.title}</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">${c.desc}</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-slate-100 dark:border-slate-700/50 mt-4">
+                        <span class="text-xl font-extrabold text-slate-900 dark:text-white">₹${c.price}</span>
+                        <button onclick="startCheckout('${c.id}')" class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl text-xs transition">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function startCheckout(courseId) {
+            if (!currentUser) {
+                openAuthModal('student');
+                return;
+            }
+            const course = mockStore.courses.find(c => c.id === courseId);
+            currentPayingCourse = course;
+            document.getElementById('payCourseTitle').innerText = course.title;
+            document.getElementById('payAmountDisplay').innerText = `₹${course.price}`;
+            document.getElementById('payBasePrice').innerText = `₹${course.price}`;
+            document.getElementById('payDiscount').innerText = `-₹0`;
+            document.getElementById('payFinalTotal').innerText = `₹${course.price}`;
+            openModal('paymentModal');
+        }
+
+        function applyCoupon() {
+            const code = document.getElementById('couponInput').value.trim().toUpperCase();
+            if (code === 'EXAM10' && currentPayingCourse) {
+                const discount = Math.round(currentPayingCourse.price * 0.10);
+                const final = currentPayingCourse.price - discount;
+                document.getElementById('payDiscount').innerText = `-₹${discount}`;
+                document.getElementById('payFinalTotal').innerText = `₹${final}`;
+                showToast("10% Coupon Applied!", "success");
+            } else {
+                showToast("Invalid Coupon Code", "error");
+            }
+        }
+
+        async function confirmPayment() {
+            if (!currentUser || !currentPayingCourse) return;
+
+            if (!currentUser.enrolledCourses.includes(currentPayingCourse.id)) {
+                currentUser.enrolledCourses.push(currentPayingCourse.id);
+            }
+
+            // Sync with Firestore
+            if (isFirebaseActive && db) {
+                await db.collection('users').doc(currentUser.uid).update({
+                    enrolledCourses: currentUser.enrolledCourses
+                });
+                await db.collection('transactions').add({
+                    uid: currentUser.uid,
+                    email: currentUser.email,
+                    courseId: currentPayingCourse.id,
+                    amount: currentPayingCourse.price,
+                    timestamp: new Date().toISOString()
+                });
+            }
+
+            closeModal('paymentModal');
+            showToast(`Enrolled in ${currentPayingCourse.title}!`, "success");
+            renderStudentDashboard();
+            navigateTo('student-dashboard');
+        }
+
+        // ==========================================
+        // CBT EXAM ENGINE (NTA STYLE SIMULATOR)
+        // ==========================================
+        function renderTests() {
+            const grid = document.getElementById('testsGrid');
+            grid.innerHTML = mockStore.tests.map(t => `
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 space-y-4 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <span class="px-2.5 py-0.5 bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 font-bold text-xs rounded-full uppercase">${t.category}</span>
+                        <h3 class="font-bold text-lg mt-2">${t.title}</h3>
+                        <div class="flex items-center space-x-4 text-xs text-slate-500 mt-2">
+                            <span><i class="fa-regular fa-clock mr-1"></i>${t.durationMinutes} Mins</span>
+                            <span><i class="fa-solid fa-list-check mr-1"></i>${t.questions.length} Questions</span>
+                        </div>
+                    </div>
+                    <button onclick="startCBTExam('${t.id}')" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl text-sm transition">
+                        Start NTA CBT Test
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function startCBTExam(testId) {
+            if (!currentUser) {
+                openAuthModal('student');
+                return;
+            }
+
+            activeCbtExam = mockStore.tests.find(t => t.id === testId);
+            cbtAnswers = {};
+            cbtCurrentQIndex = 0;
+            cbtStartTime = Date.now();
+
+            document.getElementById('cbtTestTitle').innerText = activeCbtExam.title;
+            document.getElementById('cbtExamBadge').innerText = activeCbtExam.category;
+
+            // Timer setup
+            let secondsLeft = activeCbtExam.durationMinutes * 60;
+            clearInterval(cbtTimerInterval);
+            cbtTimerInterval = setInterval(() => {
+                secondsLeft--;
+                const hrs = Math.floor(secondsLeft / 3600);
+                const mins = Math.floor((secondsLeft % 3600) / 60);
+                const secs = secondsLeft % 60;
+                document.getElementById('cbtTimerDisplay').innerText = `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+                if (secondsLeft <= 0) {
+                    clearInterval(cbtTimerInterval);
+                    submitCBTExam();
+                }
+            }, 1000);
+
+            renderCBTQuestion();
+            renderCBTPalette();
+            navigateTo('cbt-engine');
+        }
+
+        function renderCBTQuestion() {
+            const q = activeCbtExam.questions[cbtCurrentQIndex];
+            document.getElementById('cbtQuestionNum').innerText = `Question ${cbtCurrentQIndex + 1} (${q.subject})`;
+            document.getElementById('cbtQuestionText').innerText = q.text;
+
+            const selected = cbtAnswers[cbtCurrentQIndex]?.selected;
+            document.getElementById('cbtOptionsList').innerHTML = q.options.map((opt, idx) => `
+                <label onclick="selectCBTOption(${idx})" class="flex items-center space-x-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer transition ${selected === idx ? 'border-sky-500 bg-sky-50 dark:bg-sky-950/40 ring-2 ring-sky-500' : ''}">
+                    <input type="radio" name="cbtOpt" ${selected === idx ? 'checked' : ''} class="text-sky-600 focus:ring-sky-500">
+                    <span class="text-sm font-medium">${opt}</span>
+                </label>
+            `).join('');
+        }
+
+        function selectCBTOption(optIndex) {
+            if (!cbtAnswers[cbtCurrentQIndex]) {
+                cbtAnswers[cbtCurrentQIndex] = { selected: optIndex, status: 'answered' };
+            } else {
+                cbtAnswers[cbtCurrentQIndex].selected = optIndex;
+                cbtAnswers[cbtCurrentQIndex].status = 'answered';
+            }
+            renderCBTQuestion();
+            renderCBTPalette();
+        }
+
+        function cbtAction(type) {
+            if (type === 'clear') {
+                delete cbtAnswers[cbtCurrentQIndex];
+            } else if (type === 'mark') {
+                if (cbtAnswers[cbtCurrentQIndex]) {
+                    cbtAnswers[cbtCurrentQIndex].status = 'marked';
+                } else {
+                    cbtAnswers[cbtCurrentQIndex] = { selected: null, status: 'marked' };
+                }
+                if (cbtCurrentQIndex < activeCbtExam.questions.length - 1) cbtCurrentQIndex++;
+            } else if (type === 'save-next') {
+                if (cbtCurrentQIndex < activeCbtExam.questions.length - 1) cbtCurrentQIndex++;
+            }
+            renderCBTQuestion();
+            renderCBTPalette();
+        }
+
+        function renderCBTPalette() {
+            const palette = document.getElementById('cbtPaletteGrid');
+            palette.innerHTML = activeCbtExam.questions.map((_, idx) => {
+                const ans = cbtAnswers[idx];
+                let bg = 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300';
+                if (ans) {
+                    if (ans.status === 'answered') bg = 'bg-emerald-500 text-white';
+                    else if (ans.status === 'marked') bg = 'bg-purple-500 text-white';
+                }
+                return `
+                    <button onclick="jumpToCBTQuestion(${idx})" class="w-8 h-8 rounded-lg text-xs font-bold ${bg} flex items-center justify-center transition">
+                        ${idx + 1}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function jumpToCBTQuestion(idx) {
+            cbtCurrentQIndex = idx;
+            renderCBTQuestion();
+            renderCBTPalette();
+        }
+
+        async function submitCBTExam() {
+            clearInterval(cbtTimerInterval);
+            let score = 0;
+            let correct = 0;
+            let wrong = 0;
+            const timeTakenSecs = Math.round((Date.now() - cbtStartTime) / 1000);
+
+            activeCbtExam.questions.forEach((q, idx) => {
+                const userAns = cbtAnswers[idx]?.selected;
+                if (userAns !== undefined && userAns !== null) {
+                    if (userAns === q.correct) {
+                        score += 4;
+                        correct++;
+                    } else {
+                        score -= 1;
+                        wrong++;
+                    }
+                }
+            });
+
+            const total = activeCbtExam.questions.length * 4;
+            const accuracy = (correct + wrong) > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
+
+            const attemptRecord = {
+                testId: activeCbtExam.id,
+                testTitle: activeCbtExam.title,
+                uid: currentUser.uid,
+                email: currentUser.email,
+                score,
+                total,
+                correct,
+                wrong,
+                accuracy,
+                timeTakenSecs,
+                timestamp: new Date().toISOString()
+            };
+
+            mockStore.test_attempts.unshift(attemptRecord);
+
+            if (isFirebaseActive && db) {
+                await db.collection('test_attempts').add(attemptRecord);
+            }
+
+            // Populate Scorecard
+            document.getElementById('resScore').innerText = `${score}/${total}`;
+            document.getElementById('resAccuracy').innerText = `${accuracy}%`;
+            document.getElementById('resCounts').innerText = `${correct} / ${wrong}`;
+            document.getElementById('resTime').innerText = `${Math.floor(timeTakenSecs / 60)}m ${timeTakenSecs % 60}s`;
+
+            // Solutions
+            document.getElementById('solutionBreakdown').innerHTML = activeCbtExam.questions.map((q, idx) => {
+                const userAns = cbtAnswers[idx]?.selected;
+                const isCorrect = userAns === q.correct;
+                return `
+                    <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-2">
+                        <div class="font-bold text-sm">Q${idx + 1}: ${q.text}</div>
+                        <div class="text-xs space-y-1">
+                            <div>Your Answer: <span class="${isCorrect ? 'text-emerald-600 font-bold' : 'text-red-500 font-bold'}">${userAns !== undefined ? q.options[userAns] : 'Not Answered'}</span></div>
+                            <div>Correct Answer: <span class="text-emerald-600 font-bold">${q.options[q.correct]}</span></div>
+                        </div>
+                        <div class="text-xs bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg text-slate-600 dark:text-slate-300">
+                            <strong>Solution:</strong> ${q.solution}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            navigateTo('test-result');
+        }
+
+        // ==========================================
+        // STUDENT DASHBOARD CONTROLLER
+        // ==========================================
+        function switchStudentTab(tab) {
+            ['learning', 'test-history', 'login-history', 'support'].forEach(t => {
+                document.getElementById('studentTab-' + t).classList.add('hidden');
+                document.getElementById('tabBtn-' + t).className = "pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300";
+            });
+            document.getElementById('studentTab-' + tab).classList.remove('hidden');
+            document.getElementById('tabBtn-' + tab).className = "pb-3 border-b-2 border-sky-600 text-sky-600 dark:text-sky-400 font-bold";
+        }
+
+        function renderStudentDashboard() {
+            if (!currentUser) return;
+            document.getElementById('studentDashName').innerText = currentUser.email.split('@')[0];
+            document.getElementById('studentDashEmail').innerText = currentUser.email;
+
+            // Enrolled Courses
+            const enrolled = mockStore.courses.filter(c => currentUser.enrolledCourses?.includes(c.id));
+            document.getElementById('dashEnrolledCount').innerText = enrolled.length;
+            document.getElementById('enrolledCoursesList').innerHTML = enrolled.length ? enrolled.map(c => `
+                <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-bold text-base">${c.title}</h4>
+                        <p class="text-xs text-slate-500 line-clamp-2 mt-1">${c.desc}</p>
+                    </div>
+                    <button onclick="launchCoursePlayer('${c.id}')" class="w-full py-2 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl text-xs transition">
+                        Open Video Modules & PDF Notes
+                    </button>
+                </div>
+            `).join('') : `<div class="col-span-2 text-center py-8 text-slate-400 text-sm">No courses enrolled yet. Browse catalogue!</div>`;
+
+            // Test History
+            const attempts = mockStore.test_attempts.filter(a => a.email === currentUser.email);
+            document.getElementById('dashAttemptCount').innerText = attempts.length;
+            document.getElementById('studentTestHistoryTable').innerHTML = attempts.map(a => `
+                <tr>
+                    <td class="p-4 font-semibold">${a.testTitle}</td>
+                    <td class="p-4 text-xs font-mono">${new Date(a.timestamp).toLocaleDateString()}</td>
+                    <td class="p-4 font-bold text-sky-600">${a.score}/${a.total}</td>
+                    <td class="p-4 font-bold text-emerald-600">${a.accuracy}%</td>
+                    <td class="p-4 text-xs">${Math.floor(a.timeTakenSecs/60)}m</td>
+                    <td class="p-4"><button onclick="navigateTo('test-result')" class="px-3 py-1 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 text-xs font-bold rounded-lg">View</button></td>
+                </tr>
+            `).join('');
+
+            renderLoginHistoryTables();
+        }
+
+        function launchCoursePlayer(courseId) {
+            const course = mockStore.courses.find(c => c.id === courseId);
+            document.getElementById('playerCourseTitle').innerText = course.title;
+            document.getElementById('videoIframe').src = course.videoUrl;
+            document.getElementById('playerPdfLink').href = course.pdfUrl;
+            navigateTo('course-player');
+        }
+
+        function handleCreateTicket(e) {
+            e.preventDefault();
+            const subject = document.getElementById('ticketSubject').value;
+            const message = document.getElementById('ticketMessage').value;
+            const ticket = {
+                id: 'tk_' + Date.now(),
+                email: currentUser.email,
+                subject,
+                message,
+                status: 'Open',
+                timestamp: new Date().toISOString()
+            };
+            mockStore.support_tickets.unshift(ticket);
+            showToast("Support ticket raised successfully!", "success");
+            e.target.reset();
+            renderTickets();
+        }
+
+        function renderTickets() {
+            const list = document.getElementById('studentTicketsList');
+            const userTickets = mockStore.support_tickets.filter(t => t.email === currentUser?.email);
+            list.innerHTML = userTickets.length ? userTickets.map(t => `
+                <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-1">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-sm">${t.subject}</span>
+                        <span class="px-2 py-0.5 text-xs rounded bg-amber-100 text-amber-800 font-semibold">${t.status}</span>
+                    </div>
+                    <p class="text-xs text-slate-500">${t.message}</p>
+                </div>
+            `).join('') : `<div class="text-slate-400 text-xs">No active tickets.</div>`;
+        }
+
+        // ==========================================
+        // ADMIN PANEL CONTROLLER
+        // ==========================================
+        function switchAdminTab(tab) {
+            ['analytics', 'login-history', 'manage-courses', 'manage-tests', 'students'].forEach(t => {
+                document.getElementById('adminTab-' + t).classList.add('hidden');
+                document.getElementById('adminTabBtn-' + t).className = "pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-300";
+            });
+            document.getElementById('adminTab-' + tab).classList.remove('hidden');
+            document.getElementById('adminTabBtn-' + tab).className = "pb-3 border-b-2 border-purple-600 text-purple-600 dark:text-purple-400 font-bold";
+        }
+
+        function renderAdminDashboard() {
+            document.getElementById('adminStatRevenue').innerText = `₹1,497`;
+            document.getElementById('adminStatUsers').innerText = mockStore.users.length;
+            document.getElementById('adminStatAttempts').innerText = mockStore.test_attempts.length;
+
+            // Admin User Management Table
+            const userTable = document.getElementById('adminUserTable');
+            userTable.innerHTML = mockStore.users.map(u => `
+                <tr>
+                    <td class="p-3 font-semibold">${u.email}</td>
+                    <td class="p-3"><span class="px-2 py-0.5 text-xs rounded font-semibold ${u.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-sky-100 text-sky-700'}">${u.role}</span></td>
+                    <td class="p-3 text-xs">${u.enrolledCourses?.length || 0} Courses</td>
+                    <td class="p-3"><button onclick="showToast('Granted Access', 'info')" class="text-xs text-purple-600 font-bold hover:underline">Manage</button></td>
+                </tr>
+            `).join('');
+
+            // Init Analytics Chart
+            const ctx = document.getElementById('adminAnalyticsChart')?.getContext('2d');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{
+                            label: 'Course Sales (₹)',
+                            data: [499, 998, 499, 1497, 1996, 2495, 2994],
+                            borderColor: '#8b5cf6',
+                            tension: 0.3,
+                            fill: false
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                });
+            }
+        }
+
+        async function handleCreateCourse(e) {
+            e.preventDefault();
+            const course = {
+                id: 'c_' + Date.now(),
+                title: document.getElementById('courseTitle').value,
+                category: document.getElementById('courseCategory').value,
+                price: Number(document.getElementById('coursePrice').value),
+                image: document.getElementById('courseImage').value,
+                videoUrl: document.getElementById('courseVideoUrl').value,
+                pdfUrl: document.getElementById('coursePdfUrl').value,
+                desc: document.getElementById('courseDesc').value
+            };
+            mockStore.courses.push(course);
+            if (isFirebaseActive && db) {
+                await db.collection('courses').doc(course.id).set(course);
+            }
+            showToast("Course uploaded!", "success");
+            e.target.reset();
+            renderCourses();
+        }
+
+        async function handleCreateTest(e) {
+            e.preventDefault();
+            const test = {
+                id: 't_' + Date.now(),
+                title: document.getElementById('testName').value,
+                category: document.getElementById('testCategory').value,
+                durationMinutes: Number(document.getElementById('testDuration').value),
+                questions: mockStore.tests[0].questions // Attach default questions bank
+            };
+            mockStore.tests.push(test);
+            if (isFirebaseActive && db) {
+                await db.collection('tests').doc(test.id).set(test);
+            }
+            showToast("CBT Test created successfully!", "success");
+            e.target.reset();
+            renderTests();
+        }
+
+        // ==========================================
+        // UI HELPERS (MODALS, THEME, TOASTS)
+        // ==========================================
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function showToast(msg, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            const bg = type === 'success' ? 'bg-emerald-600' : type === 'error' ? 'bg-red-600' : 'bg-slate-800';
+            toast.className = `${bg} text-white px-4 py-3 rounded-xl shadow-xl text-xs sm:text-sm font-semibold flex items-center space-x-2 transition transform translate-y-2`;
+            toast.innerHTML = `<i class="fa-solid fa-circle-info"></i><span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.remove(); }, 3500);
+        }
+    </script>
+<script src="cg-extra.js"></script>
+<script src="cg-pyq.js"></script>
+<script src="cg-more.js"></script>
+<script src="cg-admin.js"></script>
+<script src="cg-core.js"></script>
+<script src="cg-landing.js"></script>
+<script src="cg-platform.js"></script>
+<script src="cg-tests.js"></script>
+<script src="cg-pyqaccess.js"></script>
+<script src="cg-qmanage.js"></script>
+<script src="cg-builder.js"></script>
+<script src="cg-fixes.js"></script>
+<script src="cg-ui.js"></script>
+<script src="cg-app.js"></script>
+</body>
+</html>
