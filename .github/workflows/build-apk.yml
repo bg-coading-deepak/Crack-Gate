@@ -28,6 +28,9 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Generate App Icons
+        run: npx @capacitor/assets generate --android
+
       - name: Build debug APK
         run: |
           cd android
